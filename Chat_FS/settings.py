@@ -25,7 +25,7 @@ SECRET_KEY = 'b3j83-$b10ndyiqg*_1&hmtq0u3c64va#xjo&ek9g8+=mhjibc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://immense-mountain-52551.herokuapp.com/']
 
 
 # Application definition
@@ -124,8 +124,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
-
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000'
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'front_end/build/static')
+]
+
+
